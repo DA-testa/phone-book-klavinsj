@@ -11,28 +11,28 @@ class HashMap:
             ans = (ans * self._multiplier + ord(c)) % self._prime
         return ans % self.bucket_count
         
-    def add(self, number, name):
-        hashed = self._hash_func(number)
+    def add(self, numurs, name):
+        hashed = self._hash_func(numurs)
         bucket = self.buckets[hashed]
         for i, (num, _) in enumerate(bucket):
-            if num == number:
-                bucket[i] = (number, name)
+            if num == numurs:
+                bucket[i] = (numurs, name)
                 return
-        bucket.append((number, name))
+        bucket.append((numurs, name))
         
-    def delete(self, number):
-        hashed = self._hash_func(number)
+    def delete(self, numurs):
+        hashed = self._hash_func(numurs)
         bucket = self.buckets[hashed]
         for i, (num, _) in enumerate(bucket):
-            if num == number:
+            if num == numurs:
                 bucket.pop(i)
                 return
         
-    def find(self, number):
-        hashed = self._hash_func(number)
+    def find(self, numurs):
+        hashed = self._hash_func(numurs)
         bucket = self.buckets[hashed]
         for num, name in bucket:
-            if num == number:
+            if num == numurs:
                 return name
         return "not found"
 
@@ -47,7 +47,9 @@ def main():
         elif ievade[0] == "del":
             phone_book.delete(ievade[1])
         elif ievade[0] == "find":
-            print(phone_book.find(ievade[1]))
+            result.append(phone_book.find(ievade[1]))
 
+    for resulti in result:
+        print(resulti)
 if __name__ == "__main__":
     main()
