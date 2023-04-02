@@ -1,10 +1,9 @@
 # python3
 class HashMap:
-    def __init__(self):
-        self._multiplier = 123
-        self._prime = 100000000005
-        self.bucket_count = 10
-        self.buckets = [[] for _ in range(self.bucket_count)]
+    _multiplier = 123
+    _prime = 100000000005
+    bucket_count = 10
+    buckets = [[] for _ in range(bucket_count)]
         
     def _hash_func(self, s):
         ans = 0
